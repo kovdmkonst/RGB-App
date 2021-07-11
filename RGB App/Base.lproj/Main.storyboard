@@ -29,6 +29,7 @@
                                     <constraint firstAttribute="height" constant="30" id="gAq-iu-u2j"/>
                                 </constraints>
                                 <connections>
+                                    <action selector="changeColor" destination="BYZ-38-t0r" eventType="valueChanged" id="FWW-IP-xNM"/>
                                     <action selector="showRedInfo" destination="BYZ-38-t0r" eventType="valueChanged" id="1Lc-eJ-EB9"/>
                                 </connections>
                             </slider>
@@ -52,6 +53,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Syx-Rd-JmV"/>
                                 </constraints>
                                 <connections>
+                                    <action selector="changeColor" destination="BYZ-38-t0r" eventType="valueChanged" id="G5H-mj-sRU"/>
                                     <action selector="showGreenInfo" destination="BYZ-38-t0r" eventType="valueChanged" id="GXp-oP-fUR"/>
                                 </connections>
                             </slider>
@@ -75,6 +77,7 @@
                                     <constraint firstAttribute="height" constant="30" id="cWF-7f-xKP"/>
                                 </constraints>
                                 <connections>
+                                    <action selector="changeColor" destination="BYZ-38-t0r" eventType="valueChanged" id="x0e-rT-lkw"/>
                                     <action selector="showBlueInfo" destination="BYZ-38-t0r" eventType="valueChanged" id="gr8-yJ-iJW"/>
                                 </connections>
                             </slider>
