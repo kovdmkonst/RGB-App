@@ -24,6 +24,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redSlider.setValue(0, animated: false)
+        greenSlider.setValue(0.25, animated: false)
+        blueSlider.setValue(0.5, animated: false)
+        
+        redColorField.text = "\(redSlider.value)"
+        greenColorField.text = "\(greenSlider.value)"
+        blueColorField.text = "\(blueSlider.value)"
+        
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         colorView.layer.cornerRadius = 15
         
