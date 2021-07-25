@@ -21,23 +21,20 @@ class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
 
     var currentColorOfView: UIColor!
+    var delegate: SettingsViewControllerDelegate?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redSlider.setValue(0, animated: false)
-        greenSlider.setValue(0.25, animated: false)
-        blueSlider.setValue(0.5, animated: false)
-        
-        redColorField.text = "\(redSlider.value)"
-        greenColorField.text = "\(greenSlider.value)"
-        blueColorField.text = "\(blueSlider.value)"
-        
-       
-//        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         colorView.layer.cornerRadius = 15
         
-
+        colorView.backgroundColor = currentColorOfView
+        
+        fixSliderValue()
+        showRedInfo()
+        showGreenInfo()
+        showBlueInfo()
     }
     
     
@@ -57,12 +54,25 @@ class SettingsViewController: UIViewController {
     }
    
     @IBAction func changeColor() {
-    colorView.backgroundColor = UIColor(
+     let choosenColor = UIColor(
         red: CGFloat(redSlider.value),
         green: CGFloat(greenSlider.value),
         blue: CGFloat(blueSlider.value),
-        alpha: 1
-    )
+        alpha: 1)
+        colorView.backgroundColor = choosenColor
+        delegate?.setNewBackgroundColor(colorView: choosenColor)
+    }
+    
+    @IBAction func doneButtonPressed() {
+        view.endEditing(true)
+        dismiss(animated: true)
+    }
+
+    private func fixSliderValue() {
+        let color = CIColor(color: currentColorOfView)
+        redSlider.value = Float(color.red)
+        greenSlider.value = Float(color.green)
+        blueSlider.value = Float(color.blue)
     }
 }
 
