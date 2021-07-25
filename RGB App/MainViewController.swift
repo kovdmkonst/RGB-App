@@ -12,10 +12,11 @@ protocol SettingsViewControllerDelegate {
 }
 
 class MainViewController: UIViewController {
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemIndigo
+        setItemButton()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,6 +28,11 @@ class MainViewController: UIViewController {
         let settingVC = segue.source as! SettingsViewController
         settingVC.delegate = self
         settingVC.changeColor()
+    }
+    
+    private func setItemButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .checkmark, style: .done, target: self, action: nil)
+
     }
 }
 
