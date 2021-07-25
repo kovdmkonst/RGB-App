@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
         
     @IBOutlet var colorView: UIView!
     
@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
 
-    
+    var currentColorOfView: UIColor!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +33,8 @@ class ViewController: UIViewController {
         greenColorField.text = "\(greenSlider.value)"
         blueColorField.text = "\(blueSlider.value)"
         
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+       
+//        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         colorView.layer.cornerRadius = 15
         
 
